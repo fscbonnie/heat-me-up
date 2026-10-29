@@ -52,6 +52,7 @@ body{ height:100%; margin:0; background:var(--bg); color:var(--ink);
 .kit strong{ display:block; font-size:26px; font-weight:900; color:var(--orange); line-height:1; margin-bottom:6px; }
 .kitnote{ grid-column:1 / -1; display:flex; gap:8px; align-items:flex-start; margin:0; padding:11px 14px; border-radius:14px; background:#eaf6f9; color:#2c5f6b; font-size:12px; line-height:1.4; font-weight:600; }
 .kitnote svg{ flex:none; margin-top:1px; }
+.kitnote span{ text-wrap:balance; }
 .note{ flex:none; font-size:13px; line-height:1.45; color:var(--muted); margin:12px 0 0; }
 
 /* steps */
@@ -135,7 +136,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
 @keyframes sach1{ 0%{opacity:0;transform:translateY(-14px)} 4%,26%{opacity:1;transform:translate(0,0) rotate(0)} 34%,100%{opacity:0;transform:translate(-60px,34px) rotate(-22deg)} }
 @keyframes tear1{ 0%,9%{transform:translate(0,0) rotate(0);opacity:1} 12%{transform:translate(3px,-1px) rotate(5deg)} 14%{transform:translate(1px,0) rotate(2deg)} 22%,100%{transform:translate(56px,-40px) rotate(48deg);opacity:0} }
 @keyframes shreds1{ 0%,11%{opacity:0;transform:translate(0,0) scale(.6)} 13%{opacity:1} 22%,100%{opacity:0;transform:translate(10px,-18px) scale(1.2)} }
-@keyframes pack1{ 0%{transform:translate(0,0);opacity:0} 4%{opacity:1} 17%{transform:translate(0,0)} 25%{transform:translate(0,-18px)} 31%{transform:translate(0,-22px) rotate(0)} 43%{transform:translate(0,77px) rotate(-3deg) scale(1.167,.653)} 46%{transform:translate(0,73px) rotate(-3deg) scale(1.167,.69)} 49%,92%{transform:translate(0,77px) rotate(-3deg) scale(1.167,.653);opacity:1} 100%{transform:translate(0,77px) rotate(-3deg) scale(1.167,.653);opacity:0} }
+@keyframes pack1{ 0%{transform:translate(0,0);opacity:0} 4%{opacity:1} 17%{transform:translate(0,0)} 25%{transform:translate(0,-18px)} 31%{transform:translate(0,-22px) scale(1,1)} 43%{transform:translate(0,77.5px) scale(1.167,.521)} 46%{transform:translate(0,74px) scale(1.167,.56)} 49%,92%{transform:translate(0,77.5px) scale(1.167,.521);opacity:1} 100%{transform:translate(0,77.5px) scale(1.167,.521);opacity:0} }
 @keyframes sach2{ 0%,44%{opacity:0;transform:translateY(-14px)} 48%,66%{opacity:1;transform:translate(0,0) rotate(0)} 74%,100%{opacity:0;transform:translate(60px,34px) rotate(22deg)} }
 @keyframes tear2{ 0%,52%{transform:translate(0,0) rotate(0);opacity:1} 55%{transform:translate(3px,-1px) rotate(5deg)} 57%{transform:translate(1px,0) rotate(2deg)} 64%,100%{transform:translate(56px,-40px) rotate(48deg);opacity:0} }
 @keyframes shreds2{ 0%,54%{opacity:0;transform:translate(0,0) scale(.6)} 56%{opacity:1} 64%,100%{opacity:0;transform:translate(10px,-18px) scale(1.2)} }
@@ -204,7 +205,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{ animation:none !important; transition:none !important; }
   .st{ opacity:.7; } .s6 .lid{ display:none; } .s6 .cooked, .s6 .spoon{ opacity:1; }
-  .s2 .sach1, .s2 .sach2{ display:none; } .s2 .pack1{ transform:translate(0,77px) rotate(-3deg) scale(1.167,.653); }
+  .s2 .sach1, .s2 .sach2{ display:none; } .s2 .pack1{ transform:translate(0,77.5px) scale(1.167,.521); }
 }
 </style>
 </head>
@@ -224,7 +225,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
       <div class="kit">
         <div><strong>1</strong><span data-i="k1">heating pack for each tray</span></div>
         <div><strong>330ml</strong><span data-i="k2">1 bottle of water for each tray</span></div>
-        <p class="kitnote"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5C6 4.5 3.5 7.2 3.5 10a4.5 4.5 0 0 0 9 0C12.5 7.2 10 4.5 8 1.5z" fill="#3fb3c9"/></svg><span data-i="water">Water is not included. Use your own bottled water, or ours if you added the top-up.</span></p>
+        <p class="kitnote"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5C6 4.5 3.5 7.2 3.5 10a4.5 4.5 0 0 0 9 0C12.5 7.2 10 4.5 8 1.5z" fill="#3fb3c9"/></svg><span data-i="water">Water is not included. Please use your own bottled water, or the water we provided if you added it as a top-up with your order.</span></p>
       </div>
       <p class="note" data-i="note">Some items in your order are served cold or at room temperature. Items that can be heated come packed in two trays. Repeat these steps for each one.</p>
     </section>
@@ -303,7 +304,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
     en: {
       title:'HEAT ME UP', sub:'Heat up your mini buffet in 15 mins.',
       k1:'heating pack for each tray', k2:'1 bottle of water for each tray',
-      water:'Water is not included. Use your own bottled water, or ours if you added the top-up.',
+      water:'Water is not included. Please use your own bottled water, or the water we provided if you added it as a top-up with your order.',
       note:'Some items in your order are served cold or at room temperature. Items that can be heated come packed in two trays. Repeat these steps for each one.',
       s1t:'Take out the heating tray', s1p:'Start by removing the empty heating tray from the bottom of the food tray.',
       s2t:'Add 1 heating pack', s2p:'Tear open the plastic packaging, then place the heating pack into the empty heating tray.',
@@ -323,7 +324,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
     zh: {
       title:'热一热！', sub:'15分钟即可加热您的迷你自助餐。',
       k1:'每盘1个加热包', k2:'每盘1瓶水',
-      water:'不附送水。请自备瓶装水，或使用您加购的瓶装水。',
+      water:'不附送水。请自备瓶装水，或使用您随订单加购的瓶装水。',
       note:'部分餐点为冷食或常温享用。可加热的餐点采用双层餐盘包装，每盘请重复以下步骤。',
       s1t:'取出加热盘', s1p:'先从餐盘底部取出空的加热盘。',
       s2t:'放入1个加热包', s2p:'撕开塑料包装，将加热包放入空的加热盘中。',
@@ -484,7 +485,7 @@ button:focus-visible{ outline:3px solid var(--ink); outline-offset:2px; }
     return '<g transform="rotate('+rot+' '+cx+' '+cy+') translate('+cx+' '+cy+') scale(1 .56) translate('+(-cx)+' '+(-cy)+')">' + packShape(x, y) + '</g>';
   }
   function bigPack(){
-    return '<g transform="translate(160 145) rotate(-3) scale(1.4 .784) translate(-160 -56)">' + packShape(132, 40) + '</g>';
+    return '<g transform="translate(160 145) scale(1.4 .625) translate(-160 -56)">' + packShape(132, 40) + '</g>';
   }
   function packShape(x, y){
     return '<rect x="'+x+'" y="'+y+'" width="56" height="32" rx="4" fill="'+u('pk')+'" filter="'+u('ds')+'"/>' +
